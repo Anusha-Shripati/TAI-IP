@@ -53,7 +53,7 @@ function dayOfTheWeek(dateString) {
 }
 
 function fetchWeatherData() {
-    const apiKey = "412f15d826e14c3890e122758241806"; // यहां अपना वास्तविक API Key डालें
+    const apiKey = "412f15d826e14c3890e122758241806"; 
     const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityInput}&aqi=yes`;
 
     fetch(url)
@@ -70,7 +70,7 @@ function fetchWeatherData() {
 
             const date = new Date(data.location.localtime);
             const day = date.getDate();
-            const month = date.getMonth() + 1; // JavaScript months are 0-11
+            const month = date.getMonth() + 1; 
             const year = date.getFullYear();
             const dayName = dayOfTheWeek(data.location.localtime);
 
@@ -160,5 +160,4 @@ function fetchWeatherData() {
         });
 }
 
-// Initial fetch to display weather data for the default city
 fetchWeatherData();
